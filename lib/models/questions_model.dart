@@ -19,11 +19,11 @@ List<QuestionModel> questionsList = [
         "c) CURRENT_DATE",
         "d) TO_DATE"
       ],
-      correctAnswerIndex: 1),
+      correctAnswerIndex: 0),
   QuestionModel(
       questions: "2. Which of the following are valid Oracle SQL data types?",
       options: ["a) VARCHAR2", "b) INTEGER", "c) NUMBER", "d) DATE"],
-      correctAnswerIndex: 1),
+      correctAnswerIndex: 0),
   QuestionModel(
       questions:
           "3. The GROUP BY clause is used to sort the result set in ascending or descending order.",
@@ -38,7 +38,7 @@ List<QuestionModel> questionsList = [
         "c) CURRENT_DATE",
         "d) TO_DATE"
       ],
-      correctAnswerIndex: 1),
+      correctAnswerIndex: 0),
   QuestionModel(
       questions:
           "5. The GROUP BY clause is used to sort the result set in ascending or descending order.",
@@ -52,5 +52,5 @@ List<QuestionModel> questionsList = [
         "c) CURRENT_DATE",
         "d) TO_DATE"
       ],
-      correctAnswerIndex: 1)
+      correctAnswerIndex: 0)
 ];

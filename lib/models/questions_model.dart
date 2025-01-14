@@ -11,38 +11,46 @@ class QuestionModel {
 
 List<QuestionModel> questionsList = [
   QuestionModel(
-      questions: "1.What is  the capital of France?",
-      options: ["a) Madrid", "b) Paris", "c) Berlin", "d) Rome"],
+      questions:
+          "1.Which Oracle SQL function is used to return the current system date and time?",
+      options: [
+        "a) SYSDATE",
+        "b) SYSTIMESTAMP",
+        "c) CURRENT_DATE",
+        "d) TO_DATE"
+      ],
       correctAnswerIndex: 1),
   QuestionModel(
-      questions: "2. What is the largest lake in the world?",
+      questions: "2. Which of the following are valid Oracle SQL data types?",
+      options: ["a) VARCHAR2", "b) INTEGER", "c) NUMBER", "d) DATE"],
+      correctAnswerIndex: 1),
+  QuestionModel(
+      questions:
+          "3. The GROUP BY clause is used to sort the result set in ascending or descending order.",
+      options: ["a) TRUE", "b) FALSE", "c) NONE", "d) ABOVE ALL"],
+      correctAnswerIndex: 2),
+  QuestionModel(
+      questions:
+          "4. Which Oracle SQL function is used to return the current system date and time?",
       options: [
-        "a) Caspian Sea",
-        "b) Baikal",
-        "c) Lake Superior",
-        "d) Ontario"
+        "a) SYSDATE",
+        "b) SYSTIMESTAMP",
+        "c) CURRENT_DATE",
+        "d) TO_DATE"
       ],
       correctAnswerIndex: 1),
   QuestionModel(
       questions:
-          "3. Which planet in the solar system is known as the “Red Planet”?",
-      options: ["a) Venus", "b) Earth", "c) Mars", "d) Jupiter"],
+          "5. The GROUP BY clause is used to sort the result set in ascending or descending order.",
+      options: ["a) TRUE", "b) TRUE", "c) NONE", "d) ABOVE ALL"],
       correctAnswerIndex: 2),
   QuestionModel(
-      questions: "4. Who wrote the novel “War and Peace”?",
+      questions: "6. Write SQL Query?",
       options: [
-        "a) Anton Chekhov",
-        "b) Fyodor Dostoevsky",
-        "c) Leo Tolstoy",
-        "d) Ivan Turgenev"
+        "a) SYSDATE",
+        "b) SYSTIMESTAMP",
+        "c) CURRENT_DATE",
+        "d) TO_DATE"
       ],
-      correctAnswerIndex: 2),
-  QuestionModel(
-      questions: "5. What is the capital of Japan?",
-      options: ["a) Beijing", "b) Tokyo", "c) Seoul", "d) Bangkok"],
-      correctAnswerIndex: 1),
-  QuestionModel(
-      questions: "6. Which of the following planets is not a gas giant?",
-      options: ["a) Mars", "b) Jupiter", "c) Saturn", "d) Uranus"],
-      correctAnswerIndex: 0)
+      correctAnswerIndex: 1)
 ];

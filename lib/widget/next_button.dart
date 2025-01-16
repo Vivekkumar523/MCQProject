@@ -15,7 +15,7 @@ class RectangularButton extends StatelessWidget {
           child: Card(
             color: onPressed != null
                 ? Colors.orange.shade600
-                : Colors.grey.shade50git 0,
+                : Colors.grey.shade500,
             child: Center(
               child: Text(
                 label,

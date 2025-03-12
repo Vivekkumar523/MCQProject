@@ -50,7 +50,7 @@ class _QuizeScreenState extends State<QuizeScreen> {
         backgroundColor: Colors.blue,
         title: Text(
           widget.title.toString(),
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white,fontSize: 16),
         ),
       ),
       body: Padding(

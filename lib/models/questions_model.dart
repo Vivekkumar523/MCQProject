@@ -11,38 +11,56 @@ class QuestionModel {
 
 List<QuestionModel> questionsList = [
   QuestionModel(
-      questions: "1.What is  the capital of France?",
-      options: ["a) Madrid", "b) Paris", "c) Berlin", "d) Rome"],
-      correctAnswerIndex: 1),
-  QuestionModel(
-      questions: "2. What is the largest lake in the world?",
+      questions:
+      "1. Evaluate the following SQL statement:CREATE INDEX upper_name_idx ON product_information(UPPER(product_name)); Which query would use the UPPER_NAME_IDX index?",
       options: [
-        "a) Caspian Sea",
-        "b) Baikal",
-        "c) Lake Superior",
-        "d) Ontario"
+        "a) SELECT product_jd, UPPER(product_name)FROM product_information WHERE UPPER(product_name)='LASERPRO' OR list_price > 1000;",
+        "b) SELECT UPPER(product_name)FROM product_jnformation;",
+        "c) SELECT UPPER(product_name)FROM product_information WHERE product_jd = 2254;",
+        "d) SELECT product_id FROM product_jnformation WHERE UPPER(product_name) IN ('LASERPRO', 'Cable);"
       ],
-      correctAnswerIndex: 1),
+      correctAnswerIndex: 0),
   QuestionModel(
       questions:
-          "3. Which planet in the solar system is known as the “Red Planet”?",
-      options: ["a) Venus", "b) Earth", "c) Mars", "d) Jupiter"],
-      correctAnswerIndex: 2),
-  QuestionModel(
-      questions: "4. Who wrote the novel “War and Peace”?",
+          "2. Which Oracle SQL function is used to return the current system date and time?",
       options: [
-        "a) Anton Chekhov",
-        "b) Fyodor Dostoevsky",
-        "c) Leo Tolstoy",
-        "d) Ivan Turgenev"
+        "a) SYSDATE",
+        "b) SYSTIMESTAMP",
+        "c) CURRENT_DATE",
+        "d) TO_DATE"
       ],
+      correctAnswerIndex: 0),
+  QuestionModel(
+      questions: "3. Which of the following are valid Oracle SQL data types?",
+      options: ["a) VARCHAR2", "b) INTEGER", "c) NUMBER", "d) DATE"],
+      correctAnswerIndex: 0),
+  QuestionModel(
+      questions:
+          "4. The GROUP BY clause is used to sort the result set in ascending or descending order.",
+      options: ["a) TRUE", "b) FALSE", "c) NONE", "d) ABOVE ALL"],
       correctAnswerIndex: 2),
   QuestionModel(
-      questions: "5. What is the capital of Japan?",
-      options: ["a) Beijing", "b) Tokyo", "c) Seoul", "d) Bangkok"],
-      correctAnswerIndex: 1),
+      questions:
+          "5. Which Oracle SQL function is used to return the current system date and time?",
+      options: [
+        "a) SYSDATE",
+        "b) SYSTIMESTAMP",
+        "c) CURRENT_DATE",
+        "d) TO_DATE"
+      ],
+      correctAnswerIndex: 0),
   QuestionModel(
-      questions: "6. Which of the following planets is not a gas giant?",
-      options: ["a) Mars", "b) Jupiter", "c) Saturn", "d) Uranus"],
+      questions:
+          "6. The GROUP BY clause is used to sort the result set in ascending or descending order.",
+      options: ["a) TRUE", "b) TRUE", "c) NONE", "d) ABOVE ALL"],
+      correctAnswerIndex: 2),
+  QuestionModel(
+      questions: "7. Write SQL Query?",
+      options: [
+        "a) SYSDATE",
+        "b) SYSTIMESTAMP",
+        "c) CURRENT_DATE",
+        "d) TO_DATE"
+      ],
       correctAnswerIndex: 0)
 ];

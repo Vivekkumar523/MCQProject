@@ -28,7 +28,7 @@ class AnswerCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
       child: selectedAnswerIndex != -1
           ? Container(
-              height: 50,
+              // height: 50,
               padding: EdgeInsets.all(8),
               decoration: BoxDecoration(
                   color: Colors.white24,
@@ -57,7 +57,7 @@ class AnswerCard extends StatelessWidget {
               ),
             )
           : Container(
-              height: 50,
+              // height: 50,
               padding: EdgeInsets.all(8),
               decoration: BoxDecoration(
                   color: Colors.white24,

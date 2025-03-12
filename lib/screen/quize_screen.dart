@@ -19,6 +19,8 @@ class _QuizeScreenState extends State<QuizeScreen> {
   int questionIndex = 0;
   int score = 0;
   bool isLastQuestion = false;
+  bool isLevelCompleted = false;
+
 
   pickAnswer(int value) {
     setState(() {
@@ -45,12 +47,12 @@ class _QuizeScreenState extends State<QuizeScreen> {
   Widget build(BuildContext context) {
     final question = questionsList[questionIndex];
     return Scaffold(
-      backgroundColor: Colors.purpleAccent,
+      backgroundColor: Colors.purple,
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: Text(
           widget.title.toString(),
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black),
         ),
       ),
       body: Padding(
@@ -115,7 +117,18 @@ class _QuizeScreenState extends State<QuizeScreen> {
                 : RectangularButton(
                     label: "Next",
                     onPressed:
-                        selectedAnswerIndex != null ? goToNextQuestion : null)
+                        selectedAnswerIndex != null ? goToNextQuestion : null),
+            // SizedBox(
+            //   height: 5,
+            // ),
+            if(isLastQuestion)
+              RectangularButton(
+                  label: "More Question",
+                  onPressed: (){
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text("Development in progress...")),
+                    );
+                  })
           ],
         ),
       ),

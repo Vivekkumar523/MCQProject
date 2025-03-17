@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:mcqproject/screen/quiz_progress_screen.dart';
 
 import 'package:mcqproject/screen/result_screen.dart';
 import 'package:mcqproject/widget/answer_cart.dart';
@@ -125,6 +128,7 @@ class _QuizeScreenState extends State<QuizeScreen> {
               RectangularButton(
                   label: "More Question",
                   onPressed: (){
+
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: Text("Development in progress...")),
                     );

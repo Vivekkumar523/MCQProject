@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:mcqproject/screen/quiz_progress_screen.dart';
 import 'package:mcqproject/screen/quize_screen.dart';
 
 class ProgramListScreen extends StatelessWidget {
@@ -148,23 +149,28 @@ class ProgramListScreen extends StatelessWidget {
                         SnackBar(content: Text('Work in progress.....')),
                       );
                     },
-                    child: Container(
-                      height: MediaQuery.sizeOf(context).height * 0.09,
-                      width: MediaQuery.sizeOf(context).width * 0.8,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 3,
+                    child: GestureDetector(
+                      onTap: (){
+                        Get.to(()=>QuizProgressScreen());
+                      },
+                      child: Container(
+                        height: MediaQuery.sizeOf(context).height * 0.09,
+                        width: MediaQuery.sizeOf(context).width * 0.8,
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.white,
+                              width: 3,
+                            ),
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Center(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text("Track your progress",
+                                  style:
+                                      TextStyle(fontSize: 20, color: Colors.white)),
+                            ],
                           ),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text("Track your progress",
-                                style:
-                                    TextStyle(fontSize: 20, color: Colors.white)),
-                          ],
                         ),
                       ),
                     ),

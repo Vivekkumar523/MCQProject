@@ -14,67 +14,116 @@ class ResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepPurpleAccent,
-      body: Center(
+      body: Padding(
+          padding: EdgeInsets.all(10),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(
-              height: 50,
-            ),
-            Text(
-              "Your Score",
-              style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                SizedBox(
-                  height: 250,
-                  width: 250,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 3,
-                    value: score / questionsList.length,
-                    color: Colors.blue,
-                    backgroundColor: Colors.white,
+            Expanded(
+                child: Container(
+                  width: double.infinity,
+                  child: Card(
+                    elevation: 4,
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 50,
+                        ),
+                        Text(
+                          "Quiz Progress",
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "Question  attempted: ${score.toString()}",
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                          "Question Remaining: --",
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        RectangularButton(
+                          label: "Download Certificate",
+                          onPressed: () {
+
+                          },
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                Column(
-                  children: [
-                    Text(
-                      "${score.toString()}/ ${questionsList.length}",
-                      style: TextStyle(fontSize: 50, color: Colors.white),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      "${(score / questionsList.length * 100).round()}%",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
-                    )
-                  ],
                 )
-              ],
             ),
-            SizedBox(
-              height: 50,
-            ),
-            RectangularButton(
-              label: "Back To Quize",
-              onPressed: () {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (_) => QuizeScreen(
-                          title: "MCQ Questions",
-                        )));
-              },
+            SizedBox(height: 10),
+            Expanded(
+                child: Container(
+                  width: double.infinity,
+                    child: Card(
+                      elevation: 4,
+                      child: Column(
+                        children: [
+                          SizedBox(height: 50),
+                          Text(
+                            "Your Result",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(height: 5),
+                          Text(
+                            "Your Scored ${score.toString()} out of ${questionsList.length}",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(height: 5),
+                          Text(
+                            "Percentage: ${score.toString()} out of ${questionsList.length}",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(height: 5),
+                          Text(
+                            "Status: ${score.toString()} out of ${questionsList.length}",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(height: 5),
+                          Row(
+                              children: [
+                                Expanded(
+                                    child: ElevatedButton(
+                                        onPressed: (){},
+                                        child: Text("Show Explanation"))
+                                ),
+                                SizedBox(width: 5,),
+                                Expanded(
+                                    child: ElevatedButton(
+                                        onPressed: (){},
+                                        child: Text("Retry Quiz"))
+                                ),
+                              ],
+                          )
+                        ],
+                      ),
+                    ),
+                )
             )
           ],
         ),

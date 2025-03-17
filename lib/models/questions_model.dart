@@ -12,7 +12,17 @@ class QuestionModel {
 List<QuestionModel> questionsList = [
   QuestionModel(
       questions:
-          "1.Which Oracle SQL function is used to return the current system date and time?",
+      "1. Evaluate the following SQL statement:CREATE INDEX upper_name_idx ON product_information(UPPER(product_name)); Which query would use the UPPER_NAME_IDX index?",
+      options: [
+        "a) SELECT product_jd, UPPER(product_name)FROM product_information WHERE UPPER(product_name)='LASERPRO' OR list_price > 1000;",
+        "b) SELECT UPPER(product_name)FROM product_jnformation;",
+        "c) SELECT UPPER(product_name)FROM product_information WHERE product_jd = 2254;",
+        "d) SELECT product_id FROM product_jnformation WHERE UPPER(product_name) IN ('LASERPRO', 'Cable);"
+      ],
+      correctAnswerIndex: 0),
+  QuestionModel(
+      questions:
+          "2. Which Oracle SQL function is used to return the current system date and time?",
       options: [
         "a) SYSDATE",
         "b) SYSTIMESTAMP",
@@ -21,17 +31,17 @@ List<QuestionModel> questionsList = [
       ],
       correctAnswerIndex: 0),
   QuestionModel(
-      questions: "2. Which of the following are valid Oracle SQL data types?",
+      questions: "3. Which of the following are valid Oracle SQL data types?",
       options: ["a) VARCHAR2", "b) INTEGER", "c) NUMBER", "d) DATE"],
       correctAnswerIndex: 0),
   QuestionModel(
       questions:
-          "3. The GROUP BY clause is used to sort the result set in ascending or descending order.",
+          "4. The GROUP BY clause is used to sort the result set in ascending or descending order.",
       options: ["a) TRUE", "b) FALSE", "c) NONE", "d) ABOVE ALL"],
       correctAnswerIndex: 2),
   QuestionModel(
       questions:
-          "4. Which Oracle SQL function is used to return the current system date and time?",
+          "5. Which Oracle SQL function is used to return the current system date and time?",
       options: [
         "a) SYSDATE",
         "b) SYSTIMESTAMP",
@@ -41,11 +51,11 @@ List<QuestionModel> questionsList = [
       correctAnswerIndex: 0),
   QuestionModel(
       questions:
-          "5. The GROUP BY clause is used to sort the result set in ascending or descending order.",
+          "6. The GROUP BY clause is used to sort the result set in ascending or descending order.",
       options: ["a) TRUE", "b) TRUE", "c) NONE", "d) ABOVE ALL"],
       correctAnswerIndex: 2),
   QuestionModel(
-      questions: "6. Write SQL Query?",
+      questions: "7. Write SQL Query?",
       options: [
         "a) SYSDATE",
         "b) SYSTIMESTAMP",

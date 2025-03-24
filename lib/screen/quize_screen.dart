@@ -52,7 +52,7 @@ class _QuizeScreenState extends State<QuizeScreen> {
   @override
   void initState() {
     super.initState();
-    questionsFuture = DatabaseHelper.instance.getQuestions(); // Get questions from DB
+    // questionsFuture = DatabaseHelper.instance.getQuestions(); // Get questions from DB
   }
   @override
   Widget build(BuildContext context) {
@@ -66,19 +66,21 @@ class _QuizeScreenState extends State<QuizeScreen> {
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: FutureBuilder<List<QuizQuestionModel>>(future: questionsFuture, builder: (context,snapshot){
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(child: CircularProgressIndicator());
-        } else if (snapshot.hasError) {
-          return Center(child: Text('Error: ${snapshot.error}'));
-        } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-          return Center(child: Text('No questions available'));
-        }
-
-        final questionsList = snapshot.data!;
-        final question = questionsList[questionIndex];
-
-        return Padding(
+      body:
+      // FutureBuilder<List<QuizQuestionModel>>(future: questionsFuture, builder: (context,snapshot){
+      //   if (snapshot.connectionState == ConnectionState.waiting) {
+      //     return Center(child: CircularProgressIndicator());
+      //   } else if (snapshot.hasError) {
+      //     return Center(child: Text('Error: ${snapshot.error}'));
+      //   } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+      //     return Center(child: Text('No questions available'));
+      //   }
+      //
+      //   final questionsList = snapshot.data!;
+      //   final question = questionsList[questionIndex];
+      //
+      //   return
+          Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -155,8 +157,8 @@ class _QuizeScreenState extends State<QuizeScreen> {
                     })
             ],
           ),
-        );
-      })
-    );
+        ));
+    //   })
+    // );
   }
 }

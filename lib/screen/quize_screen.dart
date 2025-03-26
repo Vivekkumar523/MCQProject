@@ -158,7 +158,5 @@ class _QuizeScreenState extends State<QuizeScreen> {
             ],
           ),
         ));
-    //   })
-    // );
   }
 }

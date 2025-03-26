@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mcqproject/models/questions_model.dart';
 import 'package:mcqproject/screen/quize_screen.dart';
+import 'package:mcqproject/screen/result_attemp_question.dart';
 
 import '../widget/next_button.dart';
 
@@ -109,7 +110,9 @@ class ResultScreen extends StatelessWidget {
                               children: [
                                 Expanded(
                                     child: ElevatedButton(
-                                        onPressed: (){},
+                                        onPressed: (){
+                                          Get.to(ResultAttempQuestion());
+                                        },
                                         child: Text("Show Explanation"))
                                 ),
                                 SizedBox(width: 5,),

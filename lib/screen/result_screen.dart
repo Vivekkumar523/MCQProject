@@ -1,7 +1,10 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/response/response.dart';
 import 'package:mcqproject/models/questions_model.dart';
+import 'package:mcqproject/screen/pdf_certificate.dart';
 import 'package:mcqproject/screen/quize_screen.dart';
 import 'package:mcqproject/screen/result_attemp_question.dart';
 
@@ -10,6 +13,8 @@ import '../widget/next_button.dart';
 class ResultScreen extends StatelessWidget {
   int score;
   ResultScreen({super.key, required this.score});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -57,9 +62,11 @@ class ResultScreen extends StatelessWidget {
                         RectangularButton(
                           label: "Download Certificate",
                           onPressed: () {
-
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (_) =>Certificate()));
                           },
                         ),
+
                       ],
                     ),
                   ),

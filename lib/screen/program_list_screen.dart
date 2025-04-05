@@ -151,7 +151,7 @@ class ProgramListScreen extends StatelessWidget {
                     },
                     child: GestureDetector(
                       onTap: (){
-                        Get.to(()=>QuizProgressScreen());
+                        // Get.to(()=>QuizProgressScreen());
                       },
                       child: Container(
                         height: MediaQuery.sizeOf(context).height * 0.09,

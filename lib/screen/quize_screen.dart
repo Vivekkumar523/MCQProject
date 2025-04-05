@@ -8,7 +8,6 @@ import 'package:mcqproject/widget/answer_cart.dart';
 import 'package:mcqproject/widget/next_button.dart';
 
 import '../models/questions_model.dart';
-import '../models/quiz_question_model.dart';
 import '../sqflite/database_manager.dart';
 
 class QuizeScreen extends StatefulWidget {
@@ -25,7 +24,6 @@ class _QuizeScreenState extends State<QuizeScreen> {
   int score = 0;
   bool isLastQuestion = false;
   bool isLevelCompleted = false;
-  late Future<List<QuizQuestionModel>> questionsFuture;
 
 
   pickAnswer(int value) {

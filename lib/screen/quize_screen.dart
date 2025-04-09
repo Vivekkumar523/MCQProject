@@ -12,6 +12,7 @@ import '../sqflite/database_manager.dart';
 
 class QuizeScreen extends StatefulWidget {
   String? title;
+
   QuizeScreen({super.key, this.title});
 
   @override
@@ -25,13 +26,11 @@ class _QuizeScreenState extends State<QuizeScreen> {
   bool isLastQuestion = false;
   bool isLevelCompleted = false;
 
-
   pickAnswer(int value) {
     setState(() {
       selectedAnswerIndex = value;
     });
     final question = questionsList[questionIndex];
-
     isLastQuestion = questionIndex == questionsList.length - 1;
     if (selectedAnswerIndex == question.correctAnswerIndex) {
       score++;
@@ -42,6 +41,13 @@ class _QuizeScreenState extends State<QuizeScreen> {
     setState(() {
       if (questionIndex < questionsList.length - 1) {
         questionIndex++;
+        final question = questionsList[questionIndex];
+        DatabaseHelper.insertQuestion(QuestionModel(
+            id:questionIndex ,
+            questions: questionsList[questionIndex].questions,
+            options: questionsList[questionIndex].options,
+            selectedAnswerIndex: selectedAnswerIndex,
+            correctAnswerIndex: questionsList[questionIndex].correctAnswerIndex));
         selectedAnswerIndex = null;
       }
     });
@@ -52,33 +58,34 @@ class _QuizeScreenState extends State<QuizeScreen> {
     super.initState();
     // questionsFuture = DatabaseHelper.instance.getQuestions(); // Get questions from DB
   }
+
   @override
   Widget build(BuildContext context) {
     final question = questionsList[questionIndex];
     return Scaffold(
-      backgroundColor: Colors.purple,
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text(
-          widget.title.toString(),
-          style: TextStyle(color: Colors.black),
+        backgroundColor: Colors.purple,
+        appBar: AppBar(
+          backgroundColor: Colors.blue,
+          title: Text(
+            widget.title.toString(),
+            style: TextStyle(color: Colors.black),
+          ),
         ),
-      ),
-      body:
-      // FutureBuilder<List<QuizQuestionModel>>(future: questionsFuture, builder: (context,snapshot){
-      //   if (snapshot.connectionState == ConnectionState.waiting) {
-      //     return Center(child: CircularProgressIndicator());
-      //   } else if (snapshot.hasError) {
-      //     return Center(child: Text('Error: ${snapshot.error}'));
-      //   } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-      //     return Center(child: Text('No questions available'));
-      //   }
-      //
-      //   final questionsList = snapshot.data!;
-      //   final question = questionsList[questionIndex];
-      //
-      //   return
-          Padding(
+        body:
+            // FutureBuilder<List<QuizQuestionModel>>(future: questionsFuture, builder: (context,snapshot){
+            //   if (snapshot.connectionState == ConnectionState.waiting) {
+            //     return Center(child: CircularProgressIndicator());
+            //   } else if (snapshot.hasError) {
+            //     return Center(child: Text('Error: ${snapshot.error}'));
+            //   } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+            //     return Center(child: Text('No questions available'));
+            //   }
+            //
+            //   final questionsList = snapshot.data!;
+            //   final question = questionsList[questionIndex];
+            //
+            //   return
+            Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,7 +99,8 @@ class _QuizeScreenState extends State<QuizeScreen> {
                       style: TextStyle(fontSize: 18),
                     ),
                     Text(
-                      "${questionIndex + 1}/${questionsList.length}", // Update this to display the current question number
+                      "${questionIndex + 1}/${questionsList.length}",
+                      // Update this to display the current question number
                       style: TextStyle(fontSize: 18),
                     ),
                   ],
@@ -132,23 +140,23 @@ class _QuizeScreenState extends State<QuizeScreen> {
               ),
               isLastQuestion
                   ? RectangularButton(
-                  label: "Finish",
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (_) => ResultScreen(score: score)));
-                  })
+                      label: "Finish",
+                      onPressed: () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (_) => ResultScreen(score: score)));
+                      })
                   : RectangularButton(
-                  label: "Next",
-                  onPressed:
-                  selectedAnswerIndex != null ? goToNextQuestion : null),
+                      label: "Next",
+                      onPressed: selectedAnswerIndex != null
+                          ? goToNextQuestion
+                          : null),
               // SizedBox(
               //   height: 5,
               // ),
-              if(isLastQuestion)
+              if (isLastQuestion)
                 RectangularButton(
                     label: "More Question",
-                    onPressed: (){
-
+                    onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text("Development in progress...")),
                       );

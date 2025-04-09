@@ -33,7 +33,7 @@ class ProgramListScreen extends StatelessWidget {
                       Icon(
                         Icons.star,
                         color: Colors.white,
-                        size: 35,
+                        size: 30,
                       ),
                       Icon(
                         Icons.share,

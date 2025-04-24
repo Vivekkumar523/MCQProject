@@ -1,0 +1,2 @@
+C:/Users/ASUS/flutter_development/MCQProject/android/app/.cxx/Debug/6s5462z2/x86/CMakeFiles/edit_cache.dir
+C:/Users/ASUS/flutter_development/MCQProject/android/app/.cxx/Debug/6s5462z2/x86/CMakeFiles/rebuild_cache.dir

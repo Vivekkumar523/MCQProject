@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/response/response.dart';
 import 'package:mcqproject/models/questions_model.dart';
 import 'package:mcqproject/screen/pdf_certificate.dart';
-import 'package:mcqproject/screen/quize_screen.dart';
+import 'package:mcqproject/screen/quiz_screen.dart';
 import 'package:mcqproject/screen/result_attemp_question.dart';
 
 import '../widget/next_button.dart';

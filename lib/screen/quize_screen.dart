@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:mcqproject/screen/quiz_progress_screen.dart';
 
 import 'package:mcqproject/screen/result_screen.dart';
 import 'package:mcqproject/widget/answer_cart.dart';
@@ -10,6 +7,7 @@ import 'package:mcqproject/widget/next_button.dart';
 import '../models/questions_model.dart';
 import '../sqflite/database_manager.dart';
 
+// ignore: must_be_immutable
 class QuizeScreen extends StatefulWidget {
   String? title;
 
@@ -20,7 +18,7 @@ class QuizeScreen extends StatefulWidget {
 }
 
 class _QuizeScreenState extends State<QuizeScreen> {
-  int? selectedAnswerIndex;
+  int? selectedAnswerIndex = -1;
   int questionIndex = 0;
   int score = 0;
   bool isLastQuestion = false;
@@ -35,6 +33,13 @@ class _QuizeScreenState extends State<QuizeScreen> {
     if (selectedAnswerIndex == question.correctAnswerIndex) {
       score++;
     }
+    QuestionModel questionModel = QuestionModel(
+        id: questionIndex,
+        questions: questionsList[questionIndex].questions,
+        options: questionsList[questionIndex].options,
+        selectedAnswerIndex: selectedAnswerIndex,
+        correctAnswerIndex: questionsList[questionIndex].correctAnswerIndex);
+    DatabaseHelper.insertQuestion(questionModel);
   }
 
   void goToNextQuestion() {
@@ -42,21 +47,9 @@ class _QuizeScreenState extends State<QuizeScreen> {
       if (questionIndex < questionsList.length - 1) {
         questionIndex++;
         final question = questionsList[questionIndex];
-        DatabaseHelper.insertQuestion(QuestionModel(
-            id:questionIndex ,
-            questions: questionsList[questionIndex].questions,
-            options: questionsList[questionIndex].options,
-            selectedAnswerIndex: selectedAnswerIndex,
-            correctAnswerIndex: questionsList[questionIndex].correctAnswerIndex));
-        selectedAnswerIndex = null;
       }
     });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    // questionsFuture = DatabaseHelper.instance.getQuestions(); // Get questions from DB
+    selectedAnswerIndex = null;
   }
 
   @override

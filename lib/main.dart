@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mcqproject/screen/quize_screen.dart';
+import 'package:mcqproject/screen/quiz_screen.dart';
 import 'package:mcqproject/screen/splsh_screen.dart';
 
 void main() {

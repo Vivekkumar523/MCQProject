@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:mcqproject/screen/quiz_progress_screen.dart';
-import 'package:mcqproject/screen/quize_screen.dart';
+import 'package:mcqproject/screen/quiz_screen.dart';
 
 class ProgramListScreen extends StatelessWidget {
   const ProgramListScreen({super.key});
@@ -60,7 +60,7 @@ class ProgramListScreen extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Get.to(() => QuizeScreen(
-                            title: "Quize",
+                            title: "Quiz",
                           ));
                     },
                     child: Container(

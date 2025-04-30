@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:mcqproject/screen/program_list_screen.dart';
-import 'package:mcqproject/screen/quize_screen.dart';
+import 'package:mcqproject/screen/quiz_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

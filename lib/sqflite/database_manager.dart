@@ -1,7 +1,3 @@
-import 'dart:io';
-
-import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../models/questions_model.dart';
@@ -71,7 +67,8 @@ class DatabaseHelper {
 
   static Future<void> insertQuestion(QuestionModel question) async {
     final db = await initDb();
-    await db.insert('questions', question.toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
+    await db.insert('questions', question.toMap(),
+        conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
   static Future<List<QuestionModel>> getQuestions() async {
@@ -79,4 +76,7 @@ class DatabaseHelper {
     final List<Map<String, dynamic>> maps = await db.query('questions');
     return maps.map((e) => QuestionModel.fromMap(e)).toList();
   }
+
 }
+
+

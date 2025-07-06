@@ -23,9 +23,9 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Accept Android Licenses (Windows)
+      - name: Accept Android Licenses via SDK Manager (Windows)
         run: |
-          for /l %%x in (1, 1, 10) do echo y | flutter doctor --android-licenses
+          echo y | "%ANDROID_SDK_ROOT%\cmdline-tools\latest\bin\sdkmanager.bat" --licenses
         shell: cmd
 
       - name: Install Dependencies

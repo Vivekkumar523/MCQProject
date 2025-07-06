@@ -2,8 +2,8 @@ import 'package:sqflite/sqflite.dart';
 
 import '../models/questions_model.dart';
 import 'package:path/path.dart';
-class DatabaseHelper {
 
+class DatabaseHelper {
   static Future<Database> initDb() async {
     final dbPath = await getDatabasesPath();
     return openDatabase(
@@ -34,7 +34,4 @@ class DatabaseHelper {
     final List<Map<String, dynamic>> maps = await db.query('questions');
     return maps.map((e) => QuestionModel.fromMap(e)).toList();
   }
-
 }
-
-

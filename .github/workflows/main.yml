@@ -1,50 +1,40 @@
+name: "Build Android APK"
+
 on:
-  pull_request:
-    branches:
-      - main
-      - master
   push:
-    branches:
-      - main
-      - master
-      - develop
-name: "Build & Release"
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master]
+
 jobs:
-  build:
-    name: Build & Release
+  android-build:
     runs-on: windows-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
+
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
-          java-version: '12'
+          java-version: '11'  # Safer than 12
+
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          architecture: x64
 
-      - run: flutter build apk --release --split-per-abi
-      - run: |
-          flutter build ios --no-codesign
-          cd build/ios/iphoneos
-          mkdir Payload
-          cd Payload
-          ln -s ../Runner.app
-          cd ..
-          zip -r app.ipa Payload
-      - name: Push to Releases
+      - name: Accept Android Licenses
+        run: yes | flutter doctor --android-licenses
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Build APK
+        run: flutter build apk --release --split-per-abi
+
+      - name: Upload APKs to Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "build/app/outputs/apk/release/*,build/ios/iphoneos/app.ipa"
+          artifacts: build/app/outputs/apk/release/*.apk
           tag: v1.0.${{ github.run_number }}
           token: ${{ secrets.TOKEN }}
-
-
-
-
-
-
-# push to master, main, develop
-# pull request on main master

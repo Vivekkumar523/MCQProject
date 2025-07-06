@@ -47,7 +47,7 @@ class _QuizeScreenState extends State<QuizeScreen> {
     setState(() {
       if (questionIndex < questionsList.length - 1) {
         questionIndex++;
-        final question = questionsList[questionIndex];
+        // final question = questionsList[questionIndex];
       }
     });
     selectedAnswerIndex = null;
@@ -119,7 +119,7 @@ class _QuizeScreenState extends State<QuizeScreen> {
                     itemBuilder: (context, index) {
                       return GestureDetector(
                           onTap: () {
-                              pickAnswer(index);
+                            pickAnswer(index);
                           },
                           child: AnswerCard(
                             question: question.options[index],

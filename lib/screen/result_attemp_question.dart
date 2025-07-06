@@ -36,7 +36,7 @@ class _ResultAttempQuestionState extends State<ResultAttempQuestion> {
               return ListView.builder(
                   itemCount: questions.length,
                   itemBuilder: (context, index) {
-                    final q = questions[index];
+                    // final q = questions[index];
                     return Card(
                       child: Padding(
                         padding: const EdgeInsets.all(15.0),

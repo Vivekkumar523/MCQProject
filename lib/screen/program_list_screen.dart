@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:mcqproject/screen/quiz_progress_screen.dart';
 import 'package:mcqproject/screen/quiz_screen.dart';
 
 class ProgramListScreen extends StatelessWidget {
@@ -98,9 +96,8 @@ class ProgramListScreen extends StatelessWidget {
                     height: MediaQuery.sizeOf(context).height * 0.02,
                   ),
                   GestureDetector(
-                    onTap: (){
-                      ScaffoldMessenger.of(context)
-                          .showSnackBar(
+                    onTap: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text('This is premium quiz')),
                       );
                     },
@@ -120,20 +117,21 @@ class ProgramListScreen extends StatelessWidget {
                           children: [
                             Text(
                               "Advance SQL Quiz-",
-                              style: TextStyle(fontSize: 20, color: Colors.white),
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white),
                             ),
                             Text("Total -600 Questions including ad.",
-                                style:
-                                    TextStyle(fontSize: 20, color: Colors.white)),
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.white)),
                             Text("Data Analysis.",
-                                style:
-                                    TextStyle(fontSize: 20, color: Colors.white)),
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.white)),
                             Text("Performance tuning.",
-                                style:
-                                    TextStyle(fontSize: 20, color: Colors.white)),
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.white)),
                             Text("Complete SQL and more.",
-                                style:
-                                    TextStyle(fontSize: 20, color: Colors.white)),
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.white)),
                           ],
                         ),
                       ),
@@ -143,14 +141,13 @@ class ProgramListScreen extends StatelessWidget {
                     height: MediaQuery.sizeOf(context).height * 0.02,
                   ),
                   GestureDetector(
-                    onTap: (){
-                      ScaffoldMessenger.of(context)
-                          .showSnackBar(
+                    onTap: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text('Work in progress.....')),
                       );
                     },
                     child: GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         // Get.to(()=>QuizProgressScreen());
                       },
                       child: Container(
@@ -167,8 +164,8 @@ class ProgramListScreen extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text("Track your progress",
-                                  style:
-                                      TextStyle(fontSize: 20, color: Colors.white)),
+                                  style: TextStyle(
+                                      fontSize: 20, color: Colors.white)),
                             ],
                           ),
                         ),

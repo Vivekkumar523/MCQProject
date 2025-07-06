@@ -23,25 +23,8 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Accept Android Licenses
-        run: |
-          echo y | "%ANDROID_SDK_ROOT%\cmdline-tools\latest\bin\sdkmanager.bat" --licenses
-        shell: cmd
-
-      - name: Install Required Android SDKs
-        run: |
-          "%ANDROID_SDK_ROOT%\cmdline-tools\latest\bin\sdkmanager.bat" "platforms;android-33" "build-tools;33.0.0" "ndk;21.4.7075529"
-        shell: cmd
-
       - name: Flutter Pub Get
         run: flutter pub get
 
-      - name: Build APK (split per ABI)
+      - name: Build APK (Verbose Output)
         run: flutter build apk --release --split-per-abi -v
-
-      - name: Upload APKs to GitHub Release
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: build/app/outputs/apk/release/*.apk
-          tag: v1.0.${{ github.run_number }}
-          token: ${{ secrets.TOKEN }}

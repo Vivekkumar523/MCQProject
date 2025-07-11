@@ -23,6 +23,7 @@ class DatabaseHelper {
     );
   }
 
+// -------
   static Future<void> insertQuestion(QuestionModel question) async {
     final db = await initDb();
     await db.insert('questions', question.toMap(),
